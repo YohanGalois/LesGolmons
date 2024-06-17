@@ -5,6 +5,7 @@ RUN apt-get update \
     && apt-get install iputils-ping -y \
     && rm -rf /var/lib/apt/lists/*
 ENV PIP_BREAK_SYSTEM_PACKAGES 1
+RUN pip3 install mininet
 RUN pip3 install scapy
 COPY requirements.txt requirements.txt
 #COPY topologie_reseau_mininet.py topologie_reseau_mininet.py
