@@ -12,6 +12,7 @@ EXPOSE 6634
 COPY . /pox
 
 COPY fichier.py /pox/pox/forwarding/fichier.py
+CMD ["./pox.py","of_tutorial","openflow.spanning_tree","openflow.discovery","openflow.of_01","--address=192.168.12.25","--port=6634","forwarding.l2_learning"]
 #CMD ["./pox.py","forwarding.fichier"]
 
 ENTRYPOINT ["sh"]
