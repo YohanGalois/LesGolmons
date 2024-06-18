@@ -6,8 +6,12 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/*
 ENV PIP_BREAK_SYSTEM_PACKAGES 1
 RUN pip3 install scapy
+RUN apt-get update \
+    && apt-get install -y mininet
+RUN pip3 install mininet
 COPY requirements.txt requirements.txt
-#COPY topologie_reseau_mininet.py topologie_reseau_mininet.py
+
+COPY ./CodePythonMininet.py CodePythonMininet.py 
 #COPY poison_h2.py poison_h2.py
 RUN service openvswitch-switch start
 
